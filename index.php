@@ -14,7 +14,6 @@
 	  <h1>NapCalc <small>Wake Up Refreshed</small></h1>
 	</div>
 
-	<div class="panel panel-success">
 		<form action="index.php" method="POST">
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
@@ -32,17 +31,17 @@
 				  <option value="10">10</option>
 				  <option value="11">11</option>
 				  <option value="12">12</option>
-				  <option value="12">13</option>
-				  <option value="12">14</option>
-				  <option value="12">15</option>
-				  <option value="12">16</option>
-				  <option value="12">17</option>
-				  <option value="12">18</option>
-				  <option value="12">19</option>
-				  <option value="12">20</option>
-				  <option value="12">21</option>
-				  <option value="12">22</option>
-				  <option value="12">23</option>
+				  <option value="13">13</option>
+				  <option value="14">14</option>
+				  <option value="15">15</option>
+				  <option value="16">16</option>
+				  <option value="17">17</option>
+				  <option value="18">18</option>
+				  <option value="19">19</option>
+				  <option value="20">20</option>
+				  <option value="21">21</option>
+				  <option value="22">22</option>
+				  <option value="23">23</option>
 				</select>
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
@@ -162,7 +161,6 @@ while( $i < count($n) )
 
 
 
-</div>
 </div>
 
 
