@@ -61,7 +61,7 @@
 				  <option value="55">55</option>
 				</select>
 			</div>
-			<div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+			<div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2">
 				<input type="submit" name="sleep" value="Calculate" class="form-control btn-success">
 			</div>
 		</div>
@@ -106,7 +106,7 @@ while( $i < count($n) )
 	$wake_up_minute_padded[$i] = sprintf("%02d", $wake_up_minute[$i]);
 	$color_array1 = array('#44c17b', '#3bb16f', '#349e63', '#2e8b57', '#28784b', '#21653f');
 	
-	echo "<div class=\"col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2\">";
+	echo "<div style=\"text-align:center;\" class=\"col-sm-2 col-md-2 col-lg-2 col-xl-2\">";
 	echo "<h1 style=\"color:".$color_array1[$i].";\">".$wakeup_hour[$i].":".$wake_up_minute_padded[$i]."</h1>";
 	echo "</div>";
 	
