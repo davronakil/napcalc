@@ -5,6 +5,7 @@
 	<title>NapCalc: Bedtime Calculator to help you calculate when to go to sleep and when to wake up refreshed!</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
