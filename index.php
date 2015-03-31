@@ -12,16 +12,22 @@
 <div class="container">
 
 	<div class="page-header">
-	  <h1>NapCalc <small>Wake Up Refreshed</small></h1>
+	  <h1 style="color:#2D9C92">NapCalc <small>Wake Up Right</small></h1>
 	</div>
 
 		<form action="index.php" method="POST">
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="hour" id="hour">
+					<option>-hour-</option>
 			<?php
 			for($x = 0; $x < 24; $x++) {
-				echo "<option value=\"".$x."\">".sprintf("%02d", $x)."</option>";
+				echo "<option value=\"".$x."\"";
+				if (($x == $_POST['hour']) && (isset($_POST['hour']))) 
+				{
+					echo " selected=\"selected\"";
+				}
+				echo ">".sprintf("%02d", $x)."</option>";
 			}
 			?>
 
@@ -29,9 +35,16 @@
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="minute" id="minute">
+				<option>-minute-</option>
 			<?php
-			for($x = 0; $x <= 55; $x = $x + 5) {
-				echo "<option value=\"".$x."\">".sprintf("%02d", $x)."</option>";
+			for($x = 0; $x <= 55; $x = $x + 5) 
+			{
+				echo "<option value=\"".$x."\"";
+				if (($x == $_POST['minute']) && (isset($_POST['minute']))) 
+				{
+					echo " selected=\"selected\"";
+				}
+				echo ">".sprintf("%02d", $x)."</option>";
 			}
 			?>
 	
@@ -44,13 +57,15 @@
 		</form>
 	
 
-
-
 <?php
 
 ///////////////////
 // WAKE UP TIMES //
 ///////////////////
+
+if (!(isset($_POST['hour']))) {
+	exit();
+}
 
 $hour = $_POST['hour'];
 $minute = $_POST['minute'];
@@ -102,8 +117,6 @@ $n = array(7,6,5,4,3);
 $time_minutes = (($hour * 60) + $minute);
 $i = 0;
 
-
-
 while( $i < count($n) )
 {
 	$bed_time_minutes[$i] = $time_minutes - ($n[$i] * 90);
@@ -126,28 +139,15 @@ while( $i < count($n) )
 	// echo $bed_time_minute_padded[$i];
 	// echo "<br>";
 	
-
 	$i = $i + 1;
 }
-
 //echo "*** The bedtime values directly above represent the times you should aim to be asleep.  On average it takes ~14 minutes to fall asleep.  Plan accordingly.";
-
 ?>
-
-
-
-
-
 
 </div>
 
-
 </body>
 </html>
-
-
-
-
 
 
 
