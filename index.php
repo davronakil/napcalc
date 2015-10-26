@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="hour" id="hour">
-					<option>-hour-</option>
+					<option>hour</option>
 			<?php
 			for($x = 0; $x < 24; $x++) {
 				echo "<option value=\"".$x."\"";
@@ -35,7 +35,7 @@
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="minute" id="minute">
-				<option>-minute-</option>
+				<option>minute</option>
 			<?php
 			for($x = 0; $x <= 55; $x = $x + 5) 
 			{
@@ -56,7 +56,6 @@
 		</div>
 		</form>
 	
-
 <?php
 
 ///////////////////
@@ -72,6 +71,8 @@ $minute = $_POST['minute'];
 $n = array(1,2,3,4,5,6);
 $time_minutes = (($hour * 60) + $minute);
 $i = 0;
+echo "<br><h3><small>On average, it takes about 14 minutes to fall asleep, which is accounted for below. Set your alarm to one of these, depending on how many sleep cycles you wish to complete:</small></h3>";
+
 
 echo "<div class=\"row\">";
 while( $i < count($n) )
@@ -104,7 +105,8 @@ while( $i < count($n) )
 	
 	$i = $i + 1;
 }
-echo "</div>";
+
+echo "<br><br></div>";
 
 
 ///////////////////////
