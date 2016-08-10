@@ -3,9 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>NapCalc: Bedtime Calculator to help you calculate when to go to sleep and when to wake up refreshed!</title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+	
 </head>
 <body>
 
@@ -19,7 +23,24 @@
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="hour" id="hour">
-					<option>hour</option>
+					<option id="hourSlot">
+						
+						<script type="text/javascript">
+							(function($) { 
+							  $(function() {
+							    // more code using $ as alias to jQuery
+							    var dt = new Date();
+								var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+
+							    $("#hourSlot").html(dt.getHours());
+
+							  });
+							})(jQuery);
+						</script>	
+					</option>
+					
+	
 			<?php
 			for($x = 0; $x < 24; $x++) {
 				echo "<option value=\"".$x."\"";
@@ -35,7 +56,25 @@
 			</div>
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="minute" id="minute">
-				<option>minute</option>
+				
+				<option id="minuteSlot">
+						
+						<script type="text/javascript">
+							(function($) { 
+							  $(function() {
+							    // more code using $ as alias to jQuery
+							    var dt = new Date();
+								var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+
+							    $("#minuteSlot").html(dt.getMinutes());
+
+							  });
+							})(jQuery);
+						</script>	
+					</option>
+
+
 			<?php
 			for($x = 0; $x <= 55; $x = $x + 5) 
 			{
