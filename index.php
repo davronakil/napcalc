@@ -5,10 +5,10 @@
 	<title>NapCalc: Bedtime Calculator to help you calculate when to go to sleep and when to wake up refreshed!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-	<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+	
 	
 </head>
 <body>
@@ -20,6 +20,9 @@
 	</div>
 
 		<form action="index.php" method="POST">
+		<div class="row">
+			<h3 style="margin-left: 18px;"><small>If I go to sleep at (24H format) ...</small></h3><br />
+		</div>
 		<div class="row">
 			<div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
 				<select class="form-control" name="hour" id="hour">
@@ -37,6 +40,13 @@
 
 							  });
 							})(jQuery);
+
+
+							// prevent Submit on refresh.
+							if ( window.history.replaceState ) {
+						        window.history.replaceState( null, null, window.location.href );
+						    }
+
 						</script>	
 					</option>
 					
@@ -183,6 +193,9 @@ while( $i < count($n) )
 	$i = $i + 1;
 }
 //echo "*** The bedtime values directly above represent the times you should aim to be asleep.  On average it takes ~14 minutes to fall asleep.  Plan accordingly.";
+
+
+
 ?>
 
 </div>
