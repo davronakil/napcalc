@@ -12,3 +12,4 @@ javascript.php is the javascript version
 [Launch NapCalc](https://akil.me/napcalc/index.php) [ akil.me/napcalc ]
 
 Feel free to bookmark it, or save it on the homescreen of your smartphone for quick access. 
+
