@@ -40,13 +40,7 @@
 
 							  });
 							})(jQuery);
-
-
-							// prevent Submit on refresh.
-							if ( window.history.replaceState ) {
-						        window.history.replaceState( null, null, window.location.href );
-						    }
-
+							
 						</script>	
 					</option>
 					
@@ -158,6 +152,7 @@ while( $i < count($n) )
 echo "<br><br></div>";
 
 
+
 ///////////////////////
 // FALL ASLEEP TIMES //
 ///////////////////////
@@ -199,6 +194,13 @@ while( $i < count($n) )
 ?>
 
 </div>
+
+<!-- prevent form submitting on refresh -->
+<script type="text/javascript">
+	if ( window.history.replaceState ) {
+	  window.history.replaceState( null, null, window.location.href );
+	}
+</script>
 
 </body>
 </html>
