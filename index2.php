@@ -19,17 +19,6 @@
     <!-- Updated jQuery and Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ieY22Y0HqHrN3T0/3Wk2J4wTc+E7ZKZ2HV" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        @media (max-width: 767px) {
-            .form-control {
-                margin-bottom: 15px;
-            }
-        }
-        .result-col {
-            text-align: center;
-            padding: 10px 0;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
@@ -37,12 +26,12 @@
         <h1 style="color:#2D9C92">NapCalc <small>Wake Up Right</small></h1>
     </div>
 
-    <form action="index.php" method="POST">
+    <form action="index2.php" method="POST">
         <div class="row">
             <h3 style="margin-left: 18px;"><small>If I go to sleep at (24H format) ...</small></h3><br/>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-5">
+            <div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
                 <select class="form-control" name="hour" id="hour">
                     <option id="hourSlot">
                         <script type="text/javascript">
@@ -59,7 +48,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-5">
+            <div class="col-xs-4 col-sm-4 col-md-5 col-lg-5 col-xl-5">
                 <select class="form-control" name="minute" id="minute">
                     <option id="minuteSlot">
                         <script type="text/javascript">
@@ -76,7 +65,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-2">
+            <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 col-xl-2">
                 <input type="submit" name="sleep" value="Calculate" class="form-control btn-success">
             </div>
         </div>
@@ -86,15 +75,12 @@
     if (isset($_POST['hour']) && isset($_POST['minute'])) {
         $hour = $_POST['hour'];
         $minute = $_POST['minute'];
-        $n = array(1, 2, 3, 4, 5, 6, 7, 8); // Added one more sleep cycle
+        $n = array(1, 2, 3, 4, 5, 6, 7); // Added one more sleep cycle
         $time_minutes = (($hour * 60) + $minute);
         $i = 0;
         echo "<br><h3><small>On average, it takes about 14 minutes to fall asleep, which is accounted for below. Set your alarm to one of these, depending on how many sleep cycles you wish to complete:</small></h3>";
         echo "<div class=\"row\">";
         while ($i < count($n)) {
-            if ($i == 4) {
-                echo "</div><div class=\"row\">";
-            }
             $wake_up_time_minutes[$i] = $time_minutes + 14 + ($n[$i] * 90);
             $wake_up_hour[$i] = floor($wake_up_time_minutes[$i] / 60);
             if ($wake_up_hour[$i] >= 24) {
@@ -103,13 +89,15 @@
             $wake_up_minute[$i] = $wake_up_time_minutes[$i] % 60;
             $wake_up_minute_padded[$i] = sprintf("%02d", $wake_up_minute[$i]);
             $wake_up_hour_padded[$i] = sprintf("%02d", $wake_up_hour[$i]);
-            $color_array1 = array('#44c17b', '#3bb16f', '#349e63', '#2e8b57', '#28784b', '#21653f', '#1c4f33', '#123c27'); // Added one more color
-            echo "<div class=\"col-xs-12 col-sm-6 col-md-3 result-col\">";
+            $color_array1 = array('#44c17b', '#3bb16f', '#349e63', '#2e8b57', '#28784b', '#21653f', '#1c4f33'); // Added one more color
+            echo "<div style=\"text-align:center;\" class=\"col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xl-2\">";
             echo "<h1 style=\"color:{$color_array1[$i]};\">{$wake_up_hour_padded[$i]}:{$wake_up_minute_padded[$i]}</h1>";
             echo "</div>";
             $i++;
         }
-        echo "</div>";
+        echo "<br><br></div>";
+
+        // Additional code for "fall asleep times" section if needed
     }
     ?>
 </div>

@@ -1,0 +1,27 @@
+{
+	"name": "NapCalc",
+	"short_name": "NapCalc",
+	"description": "NapCalc helps you calculate the best times to go to sleep and wake up feeling well rested.",
+	"start_url": "/napcalc/index.php",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#2D9C92",
+	"icons": [
+	  {
+		"src": "icons/icon-180.png",
+		"sizes": "180x180",
+		"type": "image/png"
+	  },
+	  {
+		"src": "icons/icon-32.png",
+		"sizes": "32x32",
+		"type": "image/png"
+	  },
+	  {
+		"src": "icons/icon-16.png",
+		"sizes": "16x16",
+		"type": "image/png"
+	  }
+	],
+	"scope": "/napcalc/"
+  }
